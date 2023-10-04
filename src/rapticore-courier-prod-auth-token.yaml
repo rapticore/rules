@@ -8,11 +8,10 @@ rules:
     metadata:
       cwe:
         - "CWE-798: Use of Hard-coded Credentials"
-      source-rule-url: https://github.com/dxa4481/truffleHogRegexes/blob/master/truffleHogRegexes/regexes.json
+      source-rule-url: https://github.com/rapticore/rules/blob/main/src
       category: security
       technology:
         - secrets
-        - aws
       confidence: LOW
       owasp:
         - A07:2021 - Identification and Authentication Failures
