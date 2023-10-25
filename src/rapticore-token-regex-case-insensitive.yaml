@@ -1,8 +1,8 @@
 rules:
-  - id: rapticore-secret-value
-    pattern-regex: '"[^"]*(SECRET|PASSWORD|AUTH|KEY|TOKEN|OAUTH)[^"]*":\s+".*"'
+  - id: rapticore-token-regex-case-insensitive
+    pattern-regex: "(?i)token[:= \\t]*['|\\\"]?[0-9a-zA-Z]{32,45}['|\\\"]?"
     languages:
-      - json
+      - regex
     message: Secret detected
     severity: ERROR
     metadata:
