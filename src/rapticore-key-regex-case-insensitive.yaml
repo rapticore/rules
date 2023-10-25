@@ -1,6 +1,10 @@
 rules:
   - id: rapticore-key-regex-case-insensitive
-    pattern-regex: "(?i)key[:= \\t]*['|\\\"]?[0-9a-zA-Z]{32,45}['|\\\"]?"
+    patterns:
+      - pattern-regex: |
+          "(?i)key[:= \\t]*['|\\\"]?[0-9a-zA-Z]{32,45}['|\\\"]?"
+      - pattern-not-regex: |
+          '"key":\s+".*",\s*"value":\s*"[^"]+"'
     languages:
       - regex
     message: Secret detected
