@@ -2,7 +2,7 @@ rules:
   - id: rapticore-key-regex-case-insensitive
     patterns:
       - pattern-regex: |
-          "(?i)key[:= \\t]*['|\\\"]?[0-9a-zA-Z]{32,45}['|\\\"]?"
+          "^(?i)key[:= \\t]*['|\\\"]?[0-9a-zA-Z]{32,45}['|\\\"]?"
       - pattern-not-regex: |
           '"key":\s+".*",\s*"value":\s*"[^"]+"'
     languages:
