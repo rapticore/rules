@@ -2,6 +2,7 @@ rules:
   - id: rapticore-detect-sensitive-complex
     patterns:
       - pattern-regex: '"(?i)(token[_-]?info[_-]?creds[_-]?password|api[_-]?secret|api[_-]?password|api[_-]?token)":\s*".*"'
+      - pattern-not-regex: "^[ \\t]*['|\\\"]?[A-Za-z0-9_]*(?i)password['|\\\"]?[:= \\t]*['|\\\"]?[0-9a-zA-Z]{8,45}['|\\\"]?"
     message: Secret detected
     metavariable-regex:
       metavariable: $PASSWORD
